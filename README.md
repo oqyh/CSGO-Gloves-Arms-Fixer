@@ -62,8 +62,8 @@ it happen because of delay apply skin
 
 -Still not fixed on zephyrus-store-preview-new-syntax
 recommanded to delete these lines
-[Line107](https://github.com/nuclearsilo583/zephyrus-store-preview-new-syntax/blob/91b00c56053ddc90250b89d9053f4c7dfa5b2998/addons/sourcemod/scripting/store_item_playerskins.sp#L107)
-[Line108](https://github.com/nuclearsilo583/zephyrus-store-preview-new-syntax/blob/91b00c56053ddc90250b89d9053f4c7dfa5b2998/addons/sourcemod/scripting/store_item_playerskins.sp#L108)
+https://github.com/nuclearsilo583/zephyrus-store-preview-new-syntax/blob/91b00c56053ddc90250b89d9053f4c7dfa5b2998/addons/sourcemod/scripting/store_item_playerskins.sp#L107
+https://github.com/nuclearsilo583/zephyrus-store-preview-new-syntax/blob/91b00c56053ddc90250b89d9053f4c7dfa5b2998/addons/sourcemod/scripting/store_item_playerskins.sp#L108
 to avoid bugs 
 then recompile store_item_playerskins.sp and change timer agf_delay_fixer/agf2_delay_fixer to 4.0
 ```
