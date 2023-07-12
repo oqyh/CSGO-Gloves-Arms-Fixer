@@ -3,8 +3,8 @@ https://forums.alliedmods.net/showthread.php?p=2806823
 
 ### Fix Gloves Arms For Custom Models With/Without Gloves Plugin
 
-![gif1](https://github.com/oqyh/CSGO-Arm-Gloves-Fixer/assets/48490385/0d925d19-32a0-4fb7-ad1e-c85b90fca1ad)
-![gif2](https://github.com/oqyh/CSGO-Arm-Gloves-Fixer/assets/48490385/d0d84955-f99a-4873-93fa-c75127407d91)
+![gif1](https://github.com/oqyh/CSGO-Arm-Gloves-Fixer/assets/48490385/52541686-dd97-44c8-ae90-88f9e6c0c9b7)
+![gif2](https://github.com/oqyh/CSGO-Arm-Gloves-Fixer/assets/48490385/a6f5a1b8-216e-421f-9dbd-75f776633bd4)
 
 
 ## .:[ ConVars ]:.
