@@ -10,7 +10,7 @@ https://forums.alliedmods.net/showthread.php?p=2806823
 ## .:[ ConVars ]:.
 ```
 =========================================================
-Gloves-Arm-Fixer(With Gloves Plugin)
+Gloves-Arm-Fixer(With Gloves Plugin).smx
 =========================================================
 // Arm Gloves Fixer(With Gloves Plugin)?
 // 1= Enable 
@@ -30,7 +30,7 @@ agf_delay_fixer "2.0"
 
 
 =========================================================
-Gloves-Arm-Fixer(Without Gloves Plugin)
+Gloves-Arm-Fixer(Without Gloves Plugin).smx
 =========================================================
 // Arm Gloves Fixer?
 // 1= Enable 
