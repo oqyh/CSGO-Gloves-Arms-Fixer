@@ -1,5 +1,5 @@
 # [CSGO] Arm Gloves Fixer (1.0.0)
-https://forums.alliedmods.net/showthread.php?p=2806823
+https://forums.alliedmods.net/showthread.php?t=343329
 
 ### Fix Gloves Arms For Custom Models With/Without Gloves Plugin
 
