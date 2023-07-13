@@ -4,7 +4,6 @@
 #include <sourcemod>
 #include <sdktools>
 #include <dhooks>
-#include <gloves>
 
 #define ARMS "models/weapons/t_arms.mdl" 
 #define PLUGIN_VERSION    "1.0.0"
