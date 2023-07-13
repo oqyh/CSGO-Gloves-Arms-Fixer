@@ -44,14 +44,14 @@ agf2_delay_fixer "2.0"
 ## .:[ FAQ ]:.
 ```
 -What Gloves-Arm-Fixer(With Gloves Plugin).smx do?
-if server using gloves.smx and custom arms/model
+if server using gloves.smx and custom arms/gloves
 the plugin will fix only people with default gloves
 if they use gloves.smx the custom arms will not override
 unless if you turn agf_force_remove "1" it will force custom arm on gloves.smx
 
 
 -What Gloves-Arm-Fixer(Without Gloves Plugin).smx do?
-if server not using gloves.smx and using custom arms/model
+if server not using gloves.smx and using custom arms/gloves
 the plugin will fix arms/model
 
 
