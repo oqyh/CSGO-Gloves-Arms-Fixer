@@ -52,7 +52,7 @@ unless if you turn agf_force_remove "1" it will force custom arm on gloves.smx
 
 -What Gloves-Arm-Fixer(Without Gloves Plugin).smx do?
 if server not using gloves.smx and using custom arms/gloves
-the plugin will fix arms/model
+the plugin will fix arms/gloves
 
 
 -Arms still not fixed?
