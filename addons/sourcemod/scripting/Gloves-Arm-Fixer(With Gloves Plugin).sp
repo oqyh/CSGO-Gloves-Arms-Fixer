@@ -7,7 +7,7 @@
 #include <gloves>
 
 #define ARMS "models/weapons/t_arms.mdl" 
-#define PLUGIN_VERSION    "1.0.0"
+#define PLUGIN_VERSION    "1.0.1"
 
 //bool ClientOnBot[MAXPLAYERS+1];
 Handle g_hGameConf;
@@ -73,7 +73,7 @@ public void OnPluginStart()
 	
 	g_force = CreateConVar("agf_force_remove", "0", "Force remove gloves plugin on custom arms?\n1= yes \n0= no", _, true, 0.0, true, 1.0);
 	
-	g_timer = CreateConVar("agf_delay_fixer", "2.0", "Timer delay to make fix arm/gloves, make it higher if there is apply skins delay");
+	g_timer = CreateConVar("agf_delay_fixer", "4.0", "Timer delay to make fix arm/gloves, make it higher if there is apply skins delay");
 	
 	HookEvent("player_spawn", PlayerSpawn);
 	
@@ -206,6 +206,7 @@ public Action PlayerSpawn(Handle event, const char[] name, bool dbc)
 
 //#if defined _gloves_included_
 
+
 public Action Fix_Arms(Handle timer, any client)
 {
 	if(!g_benable)return Plugin_Continue;
@@ -214,40 +215,10 @@ public Action Fix_Arms(Handle timer, any client)
 	{
 		char sz_model[128];
 		GetClientModel(client, sz_model, sizeof(sz_model));
-		if(StrContains(sz_model, "models/player/custom_player/legacy/") == -1)
+		if (StrContains(sz_model, "models/player/tm_") != -1 || StrContains(sz_model, "models/player/ctm_") != -1 || StrContains(sz_model, "models/player/custom_player/legacy/") != -1)
 		{
-			if(Gloves_IsClientUsingGloves(client) == false)
-			{
-				if(!IsFakeClient(client))
-				{
-					CreateFakeSpawnEvent(client);
-				}
-				int ent = GetEntPropEnt(client, Prop_Send, "m_hMyWearables");
-				if(ent != -1)
-				{
-					AcceptEntityInput(ent, "KillHierarchy");
-				}
-			}else if(Gloves_IsClientUsingGloves(client) == true)
-			{
-				if(!IsFakeClient(client))
-				{
-					CreateFakeSpawnEvent(client);
-				}
-				
-				if(g_bforce)
-				{
-					int ent = GetEntPropEnt(client, Prop_Send, "m_hMyWearables");
-					if(ent != -1)
-					{
-						AcceptEntityInput(ent, "KillHierarchy");
-					}
-				}
-				
-				if(GetEntProp(client, Prop_Send, "m_bIsControllingBot") || g_bforce)return Plugin_Continue;
-				EmptyArms(client);
-			}
-		}else
-		{
+			//PrintToChat(client, "you are not using custom");
+			//PrintToChat(client, "%s", sz_model);
 			if(Gloves_IsClientUsingGloves(client) == false)
 			{
 				if(!IsFakeClient(client))
@@ -276,6 +247,53 @@ public Action Fix_Arms(Handle timer, any client)
 					SetEntPropString(client, Prop_Send, "m_szArmsModel", ARMS);
 				}
 			}
+		}else
+		{
+			char b_arms[128];
+			Gloves_GetArmsModel(client, b_arms, sizeof(b_arms));
+			char b_armz[128];
+			GetEntPropString(client, Prop_Send, "m_szArmsModel", b_armz, sizeof(b_armz));
+			//PrintToChat(client, "you are using custom");
+			//PrintToChat(client, "%s", b_arms);
+			if(Gloves_IsClientUsingGloves(client) == false)
+			{
+				if(!IsFakeClient(client))
+				{
+					CreateFakeSpawnEvent(client);
+				}
+				int ent = GetEntPropEnt(client, Prop_Send, "m_hMyWearables");
+				if(ent != -1)
+				{
+					AcceptEntityInput(ent, "KillHierarchy");
+				}
+			}else if(Gloves_IsClientUsingGloves(client) == true)
+			{
+				if(!IsFakeClient(client))
+				{
+					CreateFakeSpawnEvent(client);
+				}
+				
+				if(g_bforce)
+				{
+					int ent = GetEntPropEnt(client, Prop_Send, "m_hMyWearables");
+					if(ent != -1)
+					{
+						AcceptEntityInput(ent, "KillHierarchy");
+					}
+					
+					if(b_armz[0])
+					{
+						Gloves_SetArmsModel(client, b_arms);
+					}else
+					{
+						SetEntPropString(client, Prop_Send, "m_szArmsModel", b_arms); 
+					}
+					
+				}
+				
+				if(GetEntProp(client, Prop_Send, "m_bIsControllingBot") || g_bforce)return Plugin_Continue;
+				EmptyArms(client);
+			}
 		}
 	}
 	return Plugin_Stop;
@@ -285,7 +303,7 @@ public Action Fix_Arms(Handle timer, any client)
 
 public void CreateFakeSpawnEvent(int client)
 {
-//https://github.com/nuclearsilo583/zephyrus-store-preview-new-syntax/blob/91b00c56053ddc90250b89d9053f4c7dfa5b2998/addons/sourcemod/scripting/store_item_playerskins.sp#L692
+//https://forums.alliedmods.net/showthread.php?t=314546
 	Event event = CreateEvent("player_spawn", true);
 	if (event == null)
 		return;

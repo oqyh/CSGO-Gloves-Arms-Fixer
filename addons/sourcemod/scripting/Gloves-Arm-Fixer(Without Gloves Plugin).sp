@@ -4,9 +4,10 @@
 #include <sourcemod>
 #include <sdktools>
 #include <dhooks>
+#include <gloves>
 
 #define ARMS "models/weapons/t_arms.mdl" 
-#define PLUGIN_VERSION    "1.0.0"
+#define PLUGIN_VERSION    "1.0.1"
 
 //bool ClientOnBot[MAXPLAYERS+1];
 Handle g_hGameConf;
@@ -68,7 +69,7 @@ public void OnPluginStart()
 
 	g_enable = CreateConVar("agf2_enable_plugin", "1", "Arm Gloves Fixer?\n1= Enable \n0= Disable", _, true, 0.0, true, 1.0);
 	
-	g_timer = CreateConVar("agf2_delay_fixer", "2.0", "Timer delay to make fix arm/gloves, make it higher if there is apply skins delay");
+	g_timer = CreateConVar("agf2_delay_fixer", "4.0", "Timer delay to make fix arm/gloves, make it higher if there is apply skins delay");
 	
 	HookEvent("player_spawn", PlayerSpawn);
 	
@@ -202,20 +203,10 @@ public Action Fix_Arms(Handle timer, any client)
 	{
 		char sz_model[128];
 		GetClientModel(client, sz_model, sizeof(sz_model));
-		if(StrContains(sz_model, "models/player/custom_player/legacy/") == -1)
+		if (StrContains(sz_model, "models/player/tm_") != -1 || StrContains(sz_model, "models/player/ctm_") != -1 || StrContains(sz_model, "models/player/custom_player/legacy/") != -1)
 		{
-			if(!IsFakeClient(client))
-			{
-				CreateFakeSpawnEvent(client);
-			}
-			int ent = GetEntPropEnt(client, Prop_Send, "m_hMyWearables");
-			if(ent != -1)
-			{
-				AcceptEntityInput(ent, "KillHierarchy");
-			}
-			
-		}else
-		{
+			//PrintToChat(client, "you are not using custom");
+			//PrintToChat(client, "%s", sz_model);
 			if(!IsFakeClient(client))
 			{
 				CreateFakeSpawnEvent(client);
@@ -230,6 +221,19 @@ public Action Fix_Arms(Handle timer, any client)
 			
 			EmptyArms(client);
 			SetEntPropString(client, Prop_Send, "m_szArmsModel", ARMS);
+		}else
+		{
+			//PrintToChat(client, "you are using custom");
+			//PrintToChat(client, "%s", b_arms);
+			if(!IsFakeClient(client))
+			{
+				CreateFakeSpawnEvent(client);
+			}
+			int ent = GetEntPropEnt(client, Prop_Send, "m_hMyWearables");
+			if(ent != -1)
+			{
+				AcceptEntityInput(ent, "KillHierarchy");
+			}
 		}
 	}
 	return Plugin_Stop;
@@ -239,7 +243,7 @@ public Action Fix_Arms(Handle timer, any client)
 
 public void CreateFakeSpawnEvent(int client)
 {
-//https://github.com/nuclearsilo583/zephyrus-store-preview-new-syntax/blob/91b00c56053ddc90250b89d9053f4c7dfa5b2998/addons/sourcemod/scripting/store_item_playerskins.sp#L692
+//https://forums.alliedmods.net/showthread.php?t=314546
 	Event event = CreateEvent("player_spawn", true);
 	if (event == null)
 		return;
