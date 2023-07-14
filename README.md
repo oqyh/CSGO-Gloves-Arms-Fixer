@@ -6,11 +6,8 @@ https://forums.alliedmods.net/showthread.php?t=343329
 ![gif1](https://github.com/oqyh/CSGO-Arm-Gloves-Fixer/assets/48490385/52541686-dd97-44c8-ae90-88f9e6c0c9b7)
 ![gif2](https://github.com/oqyh/CSGO-Arm-Gloves-Fixer/assets/48490385/a6f5a1b8-216e-421f-9dbd-75f776633bd4)
 
-
-
-
-![before](https://github.com/oqyh/CSGO-Arm-Gloves-Fixer/assets/48490385/30c31398-6163-4990-a607-bfadf1b3a61d)
-![after](https://github.com/oqyh/CSGO-Arm-Gloves-Fixer/assets/48490385/f9238154-2c4b-424a-85a2-89c62ef29338)
+![before](https://github.com/oqyh/CSGO-Arm-Gloves-Fixer/assets/48490385/431d230a-3577-4a43-90c0-fae9264efe4b)
+![after](https://github.com/oqyh/CSGO-Arm-Gloves-Fixer/assets/48490385/6d16fd75-41c2-4643-98d1-8f8e1d5e2f19)
 
 ## .:[ ConVars ]:.
 ```
