@@ -1,4 +1,4 @@
-# [CSGO] Arm Gloves Fixer (1.0.0)
+# [CSGO] Arm Gloves Fixer (1.0.1)
 https://forums.alliedmods.net/showthread.php?t=343329
 
 ### Fix Gloves Arms For Custom Models With/Without Gloves Plugin
@@ -25,7 +25,7 @@ agf_force_remove "0"
 
 
 // Timer delay to make fix arm/gloves, make it higher if there is apply skins delay
-agf_delay_fixer "2.0"
+agf_delay_fixer "4.0"
 
 
 
@@ -38,7 +38,7 @@ Gloves-Arm-Fixer(Without Gloves Plugin).smx
 agf2_enable_plugin "1"
 
 // Timer delay to make fix arm/gloves, make it higher if there is apply skins delay
-agf2_delay_fixer "2.0"
+agf2_delay_fixer "4.0"
 ```
 
 ## .:[ FAQ ]:.
@@ -62,14 +62,29 @@ it happen because of delay apply skin
 
 -Still not fixed on zephyrus-store-preview-new-syntax
 recommanded to delete these lines
+https://github.com/nuclearsilo583/zephyrus-store-preview-new-syntax/blob/91b00c56053ddc90250b89d9053f4c7dfa5b2998/addons/sourcemod/scripting/store_item_playerskins.sp#L92
 https://github.com/nuclearsilo583/zephyrus-store-preview-new-syntax/blob/91b00c56053ddc90250b89d9053f4c7dfa5b2998/addons/sourcemod/scripting/store_item_playerskins.sp#L107
 https://github.com/nuclearsilo583/zephyrus-store-preview-new-syntax/blob/91b00c56053ddc90250b89d9053f4c7dfa5b2998/addons/sourcemod/scripting/store_item_playerskins.sp#L108
-to avoid bugs 
-then recompile store_item_playerskins.sp and change timer agf_delay_fixer/agf2_delay_fixer to 4.0
+to avoid bugs we removed command sm_hidegloves + cookies
+then recompile store_item_playerskins.sp and change timer agf_delay_fixer or agf2_delay_fixer to 4.0 it depend which plugin you wanna use
 ```
 
 ## .:[ Change Log ]:.
 ```
+(1.0.1)
+=Gloves-Arm-Fixer(With Gloves Plugin).smx
+ -Fix convar agf_force_remove 
+ -Better Detect Custom models
+ -Plugin no longer removing if client not using gloves.smx and have his own gloves
+ -Plugin no longer removing if client has his own gloves and not using custom models and gloves.smx
+ -Fix client on bot arms/gloves or custom or not
+
+=Gloves-Arm-Fixer(Without Gloves Plugin).smx
+ -Remove include <gloves>
+ -Better Detect Custom models
+ -Plugin no longer removing if client has his own gloves and not using custom models
+ -Fix client on bot arms/gloves or custom or not
+
 (1.0.0)
 - Initial Release
 ```
