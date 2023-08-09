@@ -62,7 +62,8 @@ agf_check_timer "5.0"
 
 ## .:[ FAQ ]:.
 ```
--Why i see stretch gloves?
+-Why i see stretch gloves? (Example: https://github.com/oqyh/CSGO-Gloves-Arms-Fixer/assets/48490385/e4d83c7b-4880-4e3d-9cc1-7e1ce0026f58)
+
 if you using gloves.smx make convar sm_gloves_enable_world_model "1" to "0"
 then restart server
 ```
