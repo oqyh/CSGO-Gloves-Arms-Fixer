@@ -1,0 +1,45 @@
+//======================================================================================================================
+//colors {default}, {darkred}, {green}, {lightgreen}, {red}, {blue}, {olive}, {lime}, {lightred}, {purple}, {purple}, {yellow}, {orange}, {bluegrey}, {lightblue}, {darkblue}, {grey}, {grey2}, {orchid}, {lightred2}
+//Languages "en" "ro" "ru" "sk" "sv" "th" "tr" "ua" "vi" "zho" "ar" "bg" "chi" "cze" "da" "de" "el" "es" "fi" "fr" "he" "hu" "it" "jp" "ko" "lt" "lv" "nl" "no" "pl" "pt" "pt_p"
+//======================================================================================================================
+
+
+"Phrases"
+{
+	"SpecialPlayer"
+	{
+		"en"		"{green}Gold KingZ {grey}| {darkred}Your steamid is not listed in the {lime}special players list"
+		"ru"			"{green}Gold KingZ {grey}| {darkred}Ваше steamid не указано в {lime}специальный список игроков"
+	}
+	
+	"FlagVIP"
+	{
+		"en"		"{green}Gold KingZ {grey}| {darkred}You Cant Hide Banner, You Are Not {lime}V.I.P"
+		"ru"			"{green}Gold KingZ {grey}| {darkred}Вы не можете скрыть баннер, вы не {lime}V.I.P"
+	}
+	
+	
+	"GlovesShowen"
+	{
+		"en"		"{green}Gold KingZ {grey}| Gloves + Arms Now {lime}Shown"
+		"ru"			"{green}Gold KingZ {grey}| Перчатки + оружие сейчас {lime}Показано"
+	}
+	"GlovesShowenNext"
+	{
+		"en"		"{green}Gold KingZ {grey}| Gloves + Arms Now {lime}Shown on next respawn"
+		"ru"			"{green}Gold KingZ {grey}| Перчатки + оружие сейчас {lime}Появляется при следующем возрождении"
+	}
+	
+	
+	"GlovesHidden"
+	{
+		"en"		"{green}Gold KingZ {grey}| Gloves + Arms Now {darkred}Hidden"
+		"ru"			"{green}Gold KingZ {grey}| Перчатки + оружие сейчас {darkred}Скрытый"
+	}
+	"GlovesHiddenNext"
+	{
+		"en"		"{green}Gold KingZ {grey}| Gloves + Arms Now {darkred}Hidden on next respawn"
+		"ru"			"{green}Gold KingZ {grey}| Перчатки + оружие сейчас {darkred}Скрыт при следующем возрождении"
+	}
+	
+}
