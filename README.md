@@ -17,8 +17,8 @@ csgo\addons\sourcemod\plugins\n_arms_fix.smx
 csgo\addons\sourcemod\extensions\ArmsFix.autoload
 csgo\addons\sourcemod\extensions\ArmsFix.ext.2.csgo.so
 
-then Drop Gloves Arms Fixer files in ../csgo/
-restart server 
+Then drop Gloves Arms Fixer files in ../csgo/
+Restart server 
 ```
 
 ## .:[ ConVars ]:.
