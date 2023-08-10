@@ -9,7 +9,17 @@ https://forums.alliedmods.net/showthread.php?t=343329
 
 ![beforer](https://github.com/oqyh/CSGO-Arm-Gloves-Fixer/assets/48490385/d3bc8aba-b052-435e-b2cf-7a4f1c52b4b8)  ![afterr](https://github.com/oqyh/CSGO-Arm-Gloves-Fixer/assets/48490385/35c881b5-2683-4197-addd-ba22ee496953)
 
+## .:[ installation ]:.
+```
+Remove any arm fixes
+VVVVVVV
+csgo\addons\sourcemod\plugins\n_arms_fix.smx
+csgo\addons\sourcemod\extensions\ArmsFix.autoload
+csgo\addons\sourcemod\extensions\ArmsFix.ext.2.csgo.so
 
+then Drop Gloves Arms Fixer files in ../csgo/
+restart server 
+```
 
 ## .:[ ConVars ]:.
 ```
